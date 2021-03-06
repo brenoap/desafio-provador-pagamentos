@@ -60,16 +60,16 @@ public class CenarioRecebiveisComAdiantamento {
 				Arguments.of(
 						List.of(new DadosTesteTransacao("100", "CREDITO",1)),
 						List.of("1,0.01"),
-						List.of(new DadosEsperadosRetorno("pago", "100", "86",
-								hoje.plusDays(30).format(padraoFormatacao))
+						List.of(new DadosEsperadosRetorno("pago", "100", "94",
+								hoje.format(padraoFormatacao))
 
 						)),
 				Arguments.of(
 						List.of(new DadosTesteTransacao("100", "CREDITO",1),new DadosTesteTransacao("200", "CREDITO",2)),
 						List.of("1,0.10","2,0.10"),
-						List.of(new DadosEsperadosRetorno("pago", "100", "86",
+						List.of(new DadosEsperadosRetorno("pago", "100", "87",
 								hoje.format(padraoFormatacao)),
-								new DadosEsperadosRetorno("pago", "200", "171",
+								new DadosEsperadosRetorno("pago", "200", "174",
 										hoje.format(padraoFormatacao))
 
 						))

@@ -13,8 +13,36 @@ public class DadosTransacao {
 	public final int cvv;
 	public final int id;
 
+	public BigDecimal getValor() {
+		return valor;
+	}
+
+	public MetodoPagamento getMetodo() {
+		return metodo;
+	}
+
+	public String getNumero() {
+		return numero;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public LocalDate getValidade() {
+		return validade;
+	}
+
+	public int getCvv() {
+		return cvv;
+	}
+
+	public int getId() {
+		return id;
+	}
+
 	public DadosTransacao(BigDecimal valor, MetodoPagamento metodo,
-			String numero, String nome, LocalDate validade, int cvv, int id) {
+						  String numero, String nome, LocalDate validade, int cvv, int id) {
 				this.valor = valor;
 				this.metodo = metodo;
 				this.numero = numero;

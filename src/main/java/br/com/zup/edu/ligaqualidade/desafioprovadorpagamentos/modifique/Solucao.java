@@ -1,5 +1,6 @@
 package br.com.zup.edu.ligaqualidade.desafioprovadorpagamentos.modifique;
 
+import br.com.zup.edu.ligaqualidade.desafioprovadorpagamentos.pronto.DadosAdiantamento;
 import br.com.zup.edu.ligaqualidade.desafioprovadorpagamentos.pronto.DadosTransacao;
 
 import java.time.format.DateTimeFormatter;
@@ -37,8 +38,11 @@ public class Solucao {
 		DadosTransacaoFactory dadosTransacaoFactory = DadosTransacaoFactory.getInstance();
 		final List<DadosTransacao> transacoes = dadosTransacaoFactory.criar(infoTransacoes);
 
+		DadosAdiantamentoFactory dadosAdiantamentoFactory = DadosAdiantamentoFactory.getInstance();
+		final List<DadosAdiantamento> adiantamentos = dadosAdiantamentoFactory.criar(infoAdiantamentos);
+
 		RecebivelFactory recebivelFactory = RecebivelFactory.getInstance();
-		final List<Recebivel> recebiveis = recebivelFactory.criar(transacoes);
+		final List<Recebivel> recebiveis = recebivelFactory.criar(transacoes, adiantamentos);
 
 		return recebiveis.stream().map(Recebivel::toArray).collect(Collectors.toList());
 	}
